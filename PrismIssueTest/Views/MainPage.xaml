@@ -1,0 +1,23 @@
+﻿<prism:SessionStateAwarePage
+    x:Class="PrismIssueTest.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="using:Prism.Windows.Mvvm"
+    xmlns:vm="using:PrismIssueTest.ViewModels"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance Type=vm:MainPageViewModel}"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Margin="5" Text="Click the button to reproduce the issue" />
+        <Button Grid.Row="1" Margin="5"
+                Content="Test issue"
+                Command="{Binding TestCommand}" />
+    </Grid>
+</prism:SessionStateAwarePage>
