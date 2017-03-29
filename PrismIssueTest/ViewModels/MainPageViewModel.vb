@@ -7,10 +7,9 @@ Namespace ViewModels
     Public Class MainPageViewModel
         Inherits ViewModelBase
 
-        Public ReadOnly Property TestCommand As DelegateCommand =
-            DelegateCommand.FromAsyncHandler(AddressOf OnTest)
+        Public ReadOnly Property TestCommand As New DelegateCommand(AddressOf OnTest)
 
-        Private Async Function OnTest() As Task
+        Private Async Sub OnTest()
 
             Try
 
@@ -27,7 +26,7 @@ Namespace ViewModels
 
             End Try
 
-        End Function
+        End Sub
 
         Private Async Sub ShowMessage(ByVal msg As String)
 
